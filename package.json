@@ -1,0 +1,55 @@
+{
+  "name": "graphql-x-sketch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch lib ./lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "find . -name \"*.ts\" -o -name \"*.js\" | grep -v -f .gitignore | grep -v examples | xargs eslint",
+    "prettier:base": "prettier --write",
+    "prettify": "find . -name \"*.ts\" -o -name \"*.js\" | grep -v -f .gitignore | xargs npm run prettier:base",
+    "lint-staged": "lint-staged"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^2.23.1",
+    "jszip": "^3.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "lint-staged": "^7.0.0",
+    "nodemon": "^1.17.2",
+    "prettier": "^1.11.1"
+  },
+  "pre-commit": [
+    "build",
+    "lint-staged"
+  ],
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run prettier:base",
+      "eslint",
+      "git add"
+    ],
+    "*.{md}": [
+      "npm run prettier:base",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "proseWrap": "never",
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  }
+}
