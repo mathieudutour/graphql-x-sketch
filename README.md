@@ -1,5 +1,7 @@
 # GraphQL x Sketch
 
+Querying a [Sketch](https://sketchapp.com) file with the flexibility of [GraphQL](http://graphql.org)
+
 ## Installation
 
 ```
