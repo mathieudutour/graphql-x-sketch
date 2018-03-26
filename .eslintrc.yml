@@ -6,3 +6,4 @@ plugins:
   - prettier
 rules:
   no-underscore-dangle: off
+  global-require: off
