@@ -1,6 +1,6 @@
 {
   "name": "graphql-x-sketch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Querying a Sketch file with the flexibility of GraphQL",
   "main": "lib/index.js",
   "bin": {
@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "nodemon --watch lib ./lib/index.js",
+    "generate-types": "node ./lib/generate-types.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint":
       "find . -name \"*.ts\" -o -name \"*.js\" | grep -v -f .gitignore | grep -v examples | xargs eslint",
